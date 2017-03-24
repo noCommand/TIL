@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompanyDB>
+    <EmployeTbl>
+        <Employee empId="e1" sprID="e2" dptID="d5">
+            <FName>John</FName>
+            <MInit>B</MInit>
+            <LName>Smith</LName>
+            <SSN>123456789</SSN>
+            <BDate>1965-01-09</BDate>
+            <Address>731 Fondren, Houston, TX</Address>
+            <Sex>M</Sex>
+            <Salary>30,000</Salary>
+        </Employee>
+        <Employee empId="e2" sprID="e5" dptID="d5">
+            <FName>Franklin</FName>
+            <MInit>T</MInit>
+            <LName>Wong</LName>
+            <SSN>333445555</SSN>
+            <BDate>1955-12-08</BDate>
+            <Address>638 Voss, Houston, TX</Address>
+            <Sex>M</Sex>
+            <Salary>40,000</Salary>
+        </Employee>
+        <Employee empId="e3" sprID="e6" dptID="d5">
+            <FName>Joyce</FName>
+            <MInit>A</MInit>
+            <LName>English</LName>
+            <SSN>999887777</SSN>
+            <BDate>1972-07-31</BDate>
+            <Address>5631 Rice, Houston, TX</Address>
+            <Sex>F</Sex>
+            <Salary>25,000</Salary>
+        </Employee>
+        <Employee empId="e4" sprID="e5" dptID="d5">
+            <FName>Ramesh</FName>
+            <MInit>K</MInit>
+            <LName>Narayan</LName>
+            <SSN>987654321</SSN>
+            <BDate>1962-09-15</BDate>
+            <Address>975 FireOak, Houston, TX</Address>
+            <Sex>M</Sex>
+            <Salary>43,000</Salary>
+        </Employee>
+        <Employee empId="e5" sprID="e2" dptID="d1">
+            <FName>James</FName>
+            <MInit>E</MInit>
+            <LName>Bong</LName>
+            <SSN>666884444</SSN>
+            <BDate>1937-11-10</BDate>
+            <Address>450 Stone, Houston, TX</Address>
+            <Sex>M</Sex>
+            <Salary>38,000</Salary>
+        </Employee>
+        <Employee empId="e6" sprID="e2" dptID="d4">
+            <FName>Jennifer</FName>
+            <MInit>S</MInit>
+            <LName>Wallace</LName>
+            <SSN>453453453</SSN>
+            <BDate>1941-06-20</BDate>
+            <Address>291 Berry, Bellaire, TX</Address>
+            <Sex>F</Sex>
+            <Salary>25,000</Salary>
+        </Employee>
+        <Employee empId="e7" sprID="e6" dptID="d4">
+            <FName>Ahmad</FName>
+            <MInit>V</MInit>
+            <LName>Jabbar</LName>
+            <SSN>987987987</SSN>
+            <BDate>1969-03-29</BDate>
+            <Address>980 Dallas, Houston, TX</Address>
+            <Sex>M</Sex>
+            <Salary>25,000</Salary>
+        </Employee>
+        <Employee empId="e8" sprID="" dptID="d4">
+            <FName>Alicia</FName>
+            <MInit>J</MInit>
+            <LName>Zelaya</LName>
+            <SSN>888665555</SSN>
+            <BDate>1968-01-19</BDate>
+            <Address>3321 Castle, Spring, TX</Address>
+            <Sex>F</Sex>
+            <Salary>55,000</Salary>
+        </Employee>
+    </EmployeTbl>
+
+    <DepartmentTbl>
+        <Department dptID="d1" mgrID="e5">
+            <DName>Headquarters</DName>
+            <MgrStartDate>1981-06-19</MgrStartDate>
+        </Department>
+        <Department dptID="d4" mgrID="e6">
+            <DName>Administration</DName>
+            <MgrStartDate>1995-01-20</MgrStartDate>
+        </Department>
+        <Department dptID="d5" mgrID="e2">
+            <DName>Research</DName>
+            <MgrStartDate>1988-05-22</MgrStartDate>
+        </Department>
+    </DepartmentTbl>
+
+    <WorksOnTbl>
+      <WorksOn empID="e1" prjID="p1">
+        <Hours>32.5</Hours>
+      </WorksOn>
+      <WorksOn empID="e1" prjID="p2">
+        <Hours>7.5</Hours>
+      </WorksOn>
+      <WorksOn empID="e2" prjID="p2">
+        <Hours>10</Hours>
+      </WorksOn>
+      <WorksOn empID="e2" prjID="p3">
+        <Hours>10</Hours>
+      </WorksOn>
+      <WorksOn empID="e2" prjID="p10">
+        <Hours>10</Hours>
+      </WorksOn>
+      <WorksOn empID="e2" prjID="p20">
+        <Hours>10</Hours>
+      </WorksOn>
+      <WorksOn empID="e3" prjID="p1">
+        <Hours>20</Hours>
+      </WorksOn>
+      <WorksOn empID="e3" prjID="p2">
+        <Hours>20</Hours>
+      </WorksOn>
+      <WorksOn empID="e4" prjID="p3">
+        <Hours>40</Hours>
+      </WorksOn>
+      <WorksOn empID="e5" prjID="p20">
+        <Hours>10</Hours>
+      </WorksOn>
+      <WorksOn empID="e6" prjID="p20">
+        <Hours>15</Hours>
+      </WorksOn>
+      <WorksOn empID="e6" prjID="p30">
+        <Hours>20</Hours>
+      </WorksOn>
+      <WorksOn empID="e7" prjID="p10">
+        <Hours>35</Hours>
+      </WorksOn>
+      <WorksOn empID="e7" prjID="p30">
+        <Hours>5</Hours>
+      </WorksOn>
+      <WorksOn empID="e8" prjID="p10">
+        <Hours>10</Hours>
+      </WorksOn>
+      <WorksOn empID="e8" prjID="p30">
+        <Hours>30</Hours>
+      </WorksOn>
+    </WorksOnTbl>
+
+    <DependentTbl>
+        <Dependent empID = "e1">
+          <DependentName>Alice</DependentName>
+          <Sex>F</Sex>
+          <BDate>1988-12-30</BDate>
+          <Relationship>Daughter</Relationship>
+        </Dependent>
+        <Dependent empID = "e1">
+          <DependentName>Elizabeth</DependentName>
+          <Sex>F</Sex>
+          <BDate>1967-05-05</BDate>
+          <Relationship>Spouse</Relationship>
+        </Dependent>
+        <Dependent empID = "e1">
+          <DependentName>Michael</DependentName>
+          <Sex>M</Sex>
+          <BDate>1988-01-04</BDate>
+          <Relationship>Sun</Relationship>
+        </Dependent>
+        <Dependent empID = "e2">
+          <DependentName>Alice</DependentName>
+          <Sex>F</Sex>
+          <BDate>1986-04-05</BDate>
+          <Relationship>Daughter</Relationship>
+        </Dependent>
+        <Dependent empID = "e2">
+          <DependentName>Joy</DependentName>
+          <Sex>F</Sex>
+          <BDate>1958-05-03</BDate>
+          <Relationship>Spause</Relationship>
+        </Dependent>
+        <Dependent empID = "e2">
+          <DependentName>Rheodore</DependentName>
+          <Sex>M</Sex>
+          <BDate>1983-10-25</BDate>
+          <Relationship>Son</Relationship>
+        </Dependent>
+        <Dependent empID = "e6">
+          <DependentName>Abner</DependentName>
+          <Sex>M</Sex>
+          <BDate>1942-02-28</BDate>
+          <Relationship>Spause</Relationship>
+        </Dependent>
+      </DependentTbl>
+
+    <DeptLocationsTbl>
+        <DeptLocation dptID="d1">
+            <DLocation>Houstion</DLocation>
+        </DeptLocation>
+        <DeptLocation dptID="d4">
+            <DLocation>Stafford</DLocation>
+        </DeptLocation>
+        <DeptLocation dptID="d5">
+            <DLocation>Bellaire</DLocation>
+        </DeptLocation>
+        <DeptLocation dptID="d5">
+            <DLocation>Houston</DLocation>
+        </DeptLocation>
+        <DeptLocation dptID="d5">
+            <DLocation>Suparland</DLocation>
+        </DeptLocation>
+    </DeptLocationsTbl>
+
+    <ProjectTbl>
+      <Project prjID="p1" dptID="d5">
+         <PName>PorjectX</PName>
+         <PLocation>Bellaire</PLocation>
+      </Project>
+      <Project prjID="p2" dptID="d5">
+         <PName>ProjectY</PName>
+         <PLocation>Suparland</PLocation>
+      </Project>
+      <Project prjID="p3" dptID="d5">
+         <PName>ProjectZ</PName>
+         <PLocation>Houston</PLocation>
+      </Project>
+      <Project prjID="p10" dptID="d4">
+         <PName>Computerization</PName>
+         <PLocation>Stafford</PLocation>
+      </Project>
+      <Project prjID="p20" dptID="d1">
+         <PName>Reorganization</PName>
+         <PLocation>Houston</PLocation>
+      </Project>
+      <Project prjID="p30" dptID="d4">
+         <PName>Newbenefits</PName>
+         <PLocation>Stafford</PLocation>
+      </Project>
+   </ProjectTbl>
+</CompanyDB>

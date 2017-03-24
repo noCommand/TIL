@@ -1,0 +1,28 @@
+RecyclerView
+
+시발것임.
+
+http://onlyformylittlefox.tistory.com/8
+
+여기서도 안되면 답이없음. 나머지 2시간정도동안 붙잡고 해보기.
+
+중요한 세가지
+RecyclerView에 들어갈 DataClass 구현.
+RecyclerView에 Data 그려주는 RecyclerView.Adapter Class 구현
+RecyclerView 초기화 및 세팅
+
+Adapter의 역할은 원하는 Data를 RecyclerView에 실제로 그려주는 역할
+
+
+
+첫번째 줄 : 작성해둔 Adapter에 ArrayList<Student> 형태로 저장해둔 ArrayList를 넘겨준다.
+
+두번째 줄 : layout xml에 작성해둔 RecyclerView를 java로 가져와서 초기화
+
+세번째 줄 : RecyclerView에 Adapter 세팅
+
+네번째 줄 : LayoutManager를 통해서 List 형식으로 띄울지, 안드로이드 갤러리처럼 grid 형식으로 띄울지 결정해줌.
+
+
+
+http://mommoo.tistory.com/1   <-cardview까지 있음

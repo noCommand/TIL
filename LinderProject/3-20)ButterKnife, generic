@@ -1,0 +1,23 @@
+http://gun0912.tistory.com/2
+
+보통 안드로이드 작업할때
+
+xml 만들고 View 선언하고 할당한다.
+findViewById 이런식으로 ->
+View view_root;
+View view_contents;
+ImageButton ib_chat_photo;
+EditText et_chat_input;
+SelphoneSendButton btn_send;
+
+...
+
+view_root = findViewById(R.id.view_root);
+view_contents = findViewById(R.id.view_contents);
+ib_chat_photo = (ImageButton) findViewById(R.id.ib_chat_photo);
+ib_chat_photo.setOnClickListener(this);
+et_chat_input = (EditText) findViewById(R.id.et_chat_input);
+
+
+이런식으로 view가 10개라면 10번 선언, 10번 findViewById를 매번 해주어야 하는 번거로움이 있다.
+그래서 나온것이 ButterKnife

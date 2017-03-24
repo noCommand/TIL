@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+    android:id="@+id/fragment_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerview_plz"
+        app:layoutManager="LinearLayoutManager"
+        ></android.support.v7.widget.RecyclerView>
+    <TextView
+        android:id="@+id/fragment_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="추천 캘린더"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerview_plzz"
+        app:layoutManager="LinearLayoutManager"
+        ></android.support.v7.widget.RecyclerView>
+</LinearLayout>
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_image"/>
+
+</LinearLayout>
+
+
+
+package co.hiddentrack.pastel;
+
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import co.hiddentrack.pastel.domain.RecommandChannel;
+
+/**
+ * Created by HaeilCho on 2017-03-22.
+ */
+
+public class RecyclerDataAdapter extends RecyclerView.Adapter<RecyclerDataAdapter.ViewHolder> {
+
+    public List<RecommandChannel> arrayListOfRecommandChannel = new ArrayList<>(); //데이터를 담을 ArrayList
+
+    public ViewHolder viewHolder;
+
+    //Adapter 초기화 및 생성자로 받은 데이터 기반으로 Adapter 내 데이터로 세팅한다.
+    public RecyclerDataAdapter(List<RecommandChannel> arrayListOfRecommandChannel) {
+        this.arrayListOfRecommandChannel = arrayListOfRecommandChannel;
+    }
+
+    //ViewHolder가 초기화될 때 혹은 ViewHolder를 초기화할때 실행되는 메서드
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+
+        Context context = parent.getContext();
+        //Context를 부모로부터 받아와서
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        //받은 Context 기반으로 LayoutInflater를 생성 -> fragement가 아니라 item_layout으로 사용해야한다.
+        View recommandChannelView = layoutInflater.inflate(R.layout.item_layout, parent, false);
+        //View 생성 후, 이 View를 관리하기 위한 ViewHolder를 생성
+        viewHolder = new ViewHolder(recommandChannelView);
+
+        //생성된 ViewHolder를 OnBindeViewHolder로 넘겨줌
+        return viewHolder;
+
+        //->에러 ava.lang.IllegalStateException: Required view 'txt_name' with ID 2131493026 for field 'txtName' was not found. If this view is optional add '@Nullable' (fields) or '@Optional' (methods) annotation.
+        // ->-> fragement가 아니라 item_layout으로 사용해야한다.
+
+        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home,parent,false);
+        //return new ViewHolder(view);
+
+    }
+
+
+    //RecycleView의 Row하나하나를 구현하기 위해 Bind(묶이다) 될때 (묶일때)
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+
+        //RecyclerView에 들어갈 Data (RecommandChannel로 이루어진 ArrayList 배열인 arrayListOfRecommandChennel)
+        //을 기반으로 해당 row의 위치에 해당하는 Student를 가지고 와서
+        RecommandChannel recommandChannel = arrayListOfRecommandChannel.get(position);
+
+        //넘겨받은 ViewHolder의 Layout에 있는 View를 어떻게 다룰지 설정
+        TextView txtName = holder.txtName;
+        txtName.setText(recommandChannel.getChannelName());
+
+        TextView txtImage = holder.txtImage;
+        txtImage.setText(recommandChannel.getChannelImageName());
+    }
+
+    @Override
+    public int getItemCount() { //이 메서드가 arrayListOfRecommandChannel에 들어있는 RecommandChannel의 갯수 카운트
+        //이게 있어야 list에 있는 channel 데이터를 모두 그릴 수 있다.
+        return arrayListOfRecommandChannel.size();
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
+
+        //View를 넘겨받아서 ViewHolder를 완성
+        @BindView(R.id.txt_name)
+        TextView txtName;
+
+        @BindView(R.id.txt_image)
+        TextView txtImage;
+
+        //ViewHolder 생성
+        public ViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this,itemView);
+        }
+    }
+}
+
+
+
+
+
+
+package co.hiddentrack.pastel;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import co.hiddentrack.pastel.base.BaseFragment;
+import co.hiddentrack.pastel.domain.RecommandChannel;
+
+
+/**
+ * Created by nicholaskim on 2/2/17.
+ */
+
+public class HomeFragment extends BaseFragment {
+
+    @BindView(R.id.fragment_text)
+    TextView sampleTextView;
+
+    @BindView(R.id.recyclerview_plz)
+    RecyclerView recomandChannelRecyclerView;
+    RecyclerView.Adapter mAdapter;
+    RecyclerView.LayoutManager mLayoutManager;
+    List<RecommandChannel> list = new ArrayList<>();
+
+
+    public static Fragment newInstance() {
+        Fragment fragment = new HomeFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        ButterKnife.bind(this,rootView); //fragment와 bind
+        recomandChannelRecyclerView.setHasFixedSize(true); //null 에러 났었음
+        //-> recommandChannelRecyclerView를 실제 layout에 연결시키지 않은 문제
+        mLayoutManager = new LinearLayoutManager(getContext());
+        recomandChannelRecyclerView.setLayoutManager(mLayoutManager);
+        RecommandChannel recommandChannel = new RecommandChannel("테스트", "몇번째냐");
+        RecommandChannel recommandChannel1 = new RecommandChannel("테스트", "1번째다");
+        RecommandChannel recommandChannel2 = new RecommandChannel("테스트", "2번째다");
+        RecommandChannel recommandChannel3 = new RecommandChannel("테스트", "3번째다");
+        RecommandChannel recommandChannel4 = new RecommandChannel("테스트", "4번째다");
+
+        list.add(recommandChannel);
+        list.add(recommandChannel1);
+        list.add(recommandChannel2);
+        list.add(recommandChannel3);
+        list.add(recommandChannel4);
+
+        mAdapter = new RecyclerDataAdapter(list);
+        recomandChannelRecyclerView.setAdapter(mAdapter);
+
+        // Inflate the layout for this fragment
+        return rootView;
+
+
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
+
+        sampleTextView.setText("Home Fragment");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+}

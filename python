@@ -1,0 +1,21 @@
+변수는 자료형 필요없이 변수명 = 값, 문자열도 그냥 입력한다.
+문자나 문자열을 곱하기 기호를 사용하여 사용가능하다.
+슬라이싱이라는건 문자열 같은것을 뽑아내는데 사용된다.
+a = "helloworld"   ->  a[0:4] = "hello"
+슬라이스에서 빈칸은 한쪽방향의 끝을 이야기한다.
+
+변수대입하는 경우
+>>> number = 3
+>>> "I eat %d apples." % number
+'I eat 3 apples.'
+
+배열같은 경우는 a = [1,2,3] 이런식
+
+[Tuple] 덧셈과 곱셈은 되는데, 뺄셈과 나눗셈은 사용할 수 없고(unsupported operand types),
+list처럼 index를 변경할 수 있는 메소드 - append(), extend(), insert(), remove(),
+and pop()가 없다. 오직, tuple은 새로운 tuple를 만드는 slicing만 할 수 있다.
+[장점] 1. 반복자를 사용할 수 있고 list보다 빠르다. "반복자"를 사용할 때 list대신에
+tuple을 사용할 수 있다. 2. 코드 안정성: "Write-protect"데이타로 변경할 필요가 없는
+"코드 안정성"을 높일 수 있다. 3. Dictionary keys 사용: tuple는 문자, 숫자, 다른
+tuple를 포함한 Dictionary keys을 사용할 수 있다.
+(list는 변경할 수 있기 때문에 Dictionary key로 사용할 수 없다.)

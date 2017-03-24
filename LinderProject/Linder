@@ -1,0 +1,72 @@
+린더->?
+
+일정관리서비스?
+인공지능일정관리 -> 일정추천 (캘린더가아니다?)  서비스
+
+추천위해 데이터 + 일정모으기
+
+기업 고객과의 커뮤티케이션
+
+
+일정추천을위해 구독이라는 개념(데이터를 모으기위해)을 넣었는데
+하다보니까 calender x ecal같은 구독서비스가있었음
+
+뿌려봤는데 시장성이있었음...
+
+구독형캘린더서비스를 지금 하는중..   린더 for enterpricse
+
+캘린더에 일정 넣으면 꽉차는현상 - 그래서 구독에 대한 선택적 저장\\skim  -- >
+
+
+crm 고객관리프로그램
+재보
+태운다?
+feed 내린다?
+GA다는거?
+웹플로우
+add to cal  버튼 ics파일을내려준다?
+ux?
+ecal
+호스팅
+
+NoSQL은? RDBMS는 뭔데
+객체지향 프로그래밍에서 객체랑 RDBMS에서 테이블이랑  헷갈리면 안되지
+객체지향 프로그래밍에서 객체를 클래스로 만들지?
+클래스 설계할 때 무슨 기준으로 만들어?
+왔다갔다하는 데이터 비즈니스 로직에서 사용되는 데이터 구조
+여튼 그래서 도메인 패키지 밑에 보면 API랑 통신할때 사용되는 모델들이 정의됨 Swagger 보면 알겠지만 /channles, /events 이런식으로 저런걸 기준으로 모델 클래스 만들면댐
+
+
+app.gradle 에 글라이더 쓰기
+compile 'com.github.bumptech.glide:glide:3.7.0'
+
+recyclerview 만들때
+
+public class ViewHolder extends RecyclerView.ViewHolder{
+    public TextView channelText;
+    public ImageView channelImage;
+
+    public ViewHolder(View itemView) {
+        super(itemView);
+        channelImage = (ImageView) itemView.findViewById(R.id.channel_image);
+        channelImage = (ImageView) itemView.findViewById(R.id.channel_image);
+    }
+
+이렇게 클래스 똑같이 만들고, viewholder 추가
+
+
+<android.support.v7.widget.RecyclerView
+        android:id="@+id/HomeRecommandupdateRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+
+
+    <android.support.v7.widget.RecyclerView
+
+        android:id="@+id/HomeRecommandCalenderRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+
+ 레트로핏

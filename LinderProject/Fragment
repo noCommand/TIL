@@ -1,0 +1,25 @@
+fragment는
+
+activity 2개를 만드느니
+activity는 하난데 그안에 fragment를 두개를 만들어서 효율적으로 쓰겠다.
+
+intent해서 만드는것보다는 (intent는 다른 화면으로 넘어가게 만드는것) 이때
+에러나버벅임이 일어나기 쉬움
+
+하지만 fragment는 이런게 덜하고 관리하기에도 쉬움
+
+순서
+ 1) fragment activity 추가, xml 추가
+      mainactivity에 버튼추가
+ 2) 만든 fragment를 mainactivity에 연결
+
+mainActivity도 fragment를 받을 수있는 환경이어야한다.
+
+그래서 fragment를 받을 수 있는 컨테이너를 만든다.
+
+2) java부분에서 fragment를 extends하고 return inflater 써놓으면 이제
+xml부분에서 그 fragment를 넣을 공간이 마련된다.
+
+fragmentTranjection - 프래그먼트가 바뀌고 변경되고 이런것들을 다뤄주는것
+
+3) 확인하고싶으면 button에 onclick설정을 하고 java 코드상에 switch를 이용하여 변경된것을 확인한다.

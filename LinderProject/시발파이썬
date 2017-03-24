@@ -1,0 +1,5 @@
+num_pencil = int(input("연필은 몇개구입"))
+num_pen = int(input("펜은 몇개구입"))
+
+total_price = 0.7*(3000*num_pencil+4000+num_pen)
+print("총 가격은", total_price, "원 입니다.")

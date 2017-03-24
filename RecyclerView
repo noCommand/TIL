@@ -1,0 +1,33 @@
+http://youknow-yoonho.blogspot.kr/2016/02/android-fragment-recyclerview.html
+
+
+RecyclerView는 ListView의 업그레이드 형태로 데이터의 양이 많을 경우 스크롤을 효과적으로 수행하는 위젯
+
+LinearLayout을 사용하여 Adapter를 통해서 데이터에 접근
+
+그러니까 저 두개가 필요하다. - 지정해줘야함
+
+순서로는
+1. 각 항목을 구성한 item을 생성하고
+2. recyclerView를 생성하고..
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:id="@+id/collection_list"
+   android:name="com.tong.android.fragment.CollectionListFragment"
+   android:scrollbars="vertical"   - 이걸로 왠지 가로로 바꿀수 있을것 같다.
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:layout_marginTop="?attr/actionBarSize"
+   android:background="#ECEFF1"
+   app:layoutManager="LinearLayoutManager"
+   tools:context="com.tong.android.fragment.CollectionListFragment"
+   tools:listitem="@layout/fragment_item" />
+
+3. adapter를 만들어준다.
+ onBindViewHolder이게 실제 데이터를 바인딩해준다.
+
+ 4. fragment 클래서에 adapter를 지정해두고 LinearlayoutManager를 사용한다.
+
+ 
