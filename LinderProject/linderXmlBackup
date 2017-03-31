@@ -1,0 +1,38 @@
+
+    <TextView
+        android:id="@+id/fragment_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:background="#e5e5e5"
+        android:text="최근 업데이트"
+        android:paddingLeft="5dp"
+
+    />
+
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/home_recyclerview_channel"
+            android:orientation = "horizontal"
+            app:layoutManager="LinearLayoutManager"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        ></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/fragment_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e5e5e5"
+        android:text="추천 캘린더"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/home_recyclerview_calendar"
+        app:layoutManager="LinearLayoutManager"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        ></android.support.v7.widget.RecyclerView>

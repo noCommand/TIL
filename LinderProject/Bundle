@@ -1,0 +1,61 @@
+여러 타입의 값을 저장하는 Map 클래스이다.
+
+자바의 구조체라고 생각하면 된다.
+
+string값을 Bundle 클래스에서 Mapping하는 것이다.
+
+int double long string에서부터 FloatArray  StringArrayList Serializable Percelable까지 구현된다.
+
+Serializable (객체 직렬화) 는 객체를 바이트로 저장하는 자바 인터페이스이고
+Percelable은 안드로이드에서 만든것이다.
+
+클래스를 직렬화하려면 implement - - (위 2개)를 하여야 한다.
+
+안드로이드에서는 액티비티간의 데이터를 주고 받을 때 Bundle 클래스를 이용하여 대이터를 전송한다.
+
+
+
+Message msg = mHandler.obtainMessage();
+
+Bundle bundle = new Bundle();
+bundle.putString("text", "메시지 내용입니다");
+msg.setData(bundle);
+mHandler.sendMessage(msg);
+
+
+받는 쪽
+
+Bundle bundle = msg.getData();
+String receiveText = bundle.getString("text");
+
+물론 receiveText 는 "메시지 내용입니다"
+
+
+
+Message msg = mHandler.obtainMessage();
+
+Bundle bundle = new Bundle();
+bundle.putString("text", "메시지 내용입니다");
+msg.setData(bundle);
+mHandler.sendMessage(msg);
+
+
+받는 쪽
+
+Bundle bundle = msg.getData();
+String receiveText = bundle.getString("text");
+
+물론 receiveText 는 "메시지 내용입니다"
+
+
+
+그리고 bundle의 다른 용도는
+아래와 같이 Activity를 생성할 때 아래와 같이 Bundle savedInstanceState 객체를 가지고 와서,
+액티비티를 중단할 때 savedInstanceState 메서드를 호출하여 임시적으로 데이터를 저장한다.
+
+즉 전에 저장된 데이터가 있으면, 그 데이터를 가지고 Activity를 다시 생성한다.
+
+public void onCreate(Bundle savedInstanceState) {
+     super.onCreate(savedInstanceState);
+     }
+     이런식으로 이용한다.

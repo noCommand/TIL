@@ -1,0 +1,16 @@
+List list = new ArrayList(); 와
+ ArrayList list = new ArrayList(); 의 차이는 무엇인가.
+
+
+ 클래스를 생성할때 도형 생성하게 되면 정사각형이 아닌 다른 직사각형, 삼각형 등 도형 인터페이스를
+ 구현한 클래스에서 사용될 수 있다.
+
+ 하지만 정사각형클래스로 클래스를 생성하면 직사각형 삼각형 등에는 사용할 수 없다.
+
+ 도형에 ㅇ하면
+
+ List list - new ArrayList();
+ 도형 list = new 정사각형
+
+ Arraylist list = new ArrayList();
+ 정사각형 list = new 정사각형();

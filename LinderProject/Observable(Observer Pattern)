@@ -1,10 +1,14 @@
 Observer Pattern이란
 한 객체의 상태가 바뀌면 그 객체에 의존하는 다른 객체들한테 연락이가고
 자동으로 내용이 갱신디는 일대다(one-to-many) 의존성을 정의한다.
-
-
 쉽게 말하면 내가 데이터를 받을때마다 나의 정보를 구독하길 원하는대상들에게 데이터를 던저주는것
-
 observer의 메소드를 호출하면서 item이나 정보 등을 호출하는 역활을 한다.
 
+
+
 ![](http://cfile3.uf.tistory.com/image/210C973452957FA212979F)
+
+
+
+참조자료 :
+http://oniondev.egloos.com/9634982
